@@ -28,5 +28,14 @@ client.connect(err => {
         console.log(result);
     })
 
+
+    // 更新数据 update
+    const where2 = {name:"wangwu"};
+    const set2 = {$set:{age:55}};
+
+    collection.updateOne(where2,set2,function(err,result){
+         console.log("更新成功\n");
+    });
+
     client.close();
 });
