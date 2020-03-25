@@ -12,7 +12,7 @@ connection.connect();
 
 connection.query('SELECT * from p_users', function (error, results, fields) {
     if (error) throw error;
-    
+
     //console.log(results);
 });
 

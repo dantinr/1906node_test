@@ -14,9 +14,19 @@ client.connect(err => {
     // });
 
     // 条件查找
-    collection.find({"name":"lisi"}).toArray(function(err, docs) {
+    const where = {"name":"lisi"};      // where条件
+    collection.find(where).toArray(function(err, docs) {
         console.log(docs)
     });
+
+
+    // 添加数据  insertOne
+    const doc = {name:"zhaoliu",email:"zhaoliu@qq.com",age:123,mobile:'13312341234'};   //一个文档 相当于 一条记录
+    collection.insertOne(doc,function(err,result){
+        console.log("insertOne\n");
+        console.log(err);
+        console.log(result);
+    })
 
     client.close();
 });
